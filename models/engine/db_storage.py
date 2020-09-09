@@ -36,11 +36,6 @@ class DBStorage:
         if getenv('HBNB_ENV') == 'test':
             Base.metadata.drop_all(self.__engine)
 
-    def close(self):
-        """ Call remove() method on the private session attribute
-        (self.__session) """
-        self.__session.remove()
-
     def all(self, cls=None):
         """Queries database for specified classes
             Parameters:
