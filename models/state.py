@@ -25,7 +25,7 @@ class State(BaseModel, Base):
             '''Returns list of cities where dstate_id is equal to State.id'''
             all_cities = models.storage.all(City)
             instance_list = []
-            for key, val all_cities.items():
+            for key, val in all_cities.items():
                 if self.id == value.state_id:
                     instance_list.append(val)
             return instance_list
