@@ -2,6 +2,7 @@
 """ State Module for HBNB project """
 import models
 from models.base_model import BaseModel, Base
+from models.city import City
 from os import getenv
 import sqlalchemy
 from sqlalchemy import Column, String
@@ -21,10 +22,10 @@ class State(BaseModel, Base):
     else:
         @property
         def cities(self):
-            '''Returns list of citiy where dstate_id is equal to State.id'''
+            '''Returns list of cities where dstate_id is equal to State.id'''
+            all_cities = models.storage.all(City)
             instance_list = []
-            for _, val in models.storage.all().items():
-                if val.__class__.__name__ == 'City'\
-                        and val.state._id == self.id:
+            for key, val all_cities.items():
+                if self.id == value.state_id:
                     instance_list.append(val)
             return instance_list
